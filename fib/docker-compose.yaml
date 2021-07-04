@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  mymongodb:
+    image: mongo:latest
+    container_name: "mymongodb"
+    ports:
+      - 27017:27017
+  austin_fibs:
+    image: austin_fibs:1.0
+    container_name: austin_fibs
+    ports:
+      - 8080:8080
+    links:
+      - mymongodb
